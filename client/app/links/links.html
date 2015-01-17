@@ -3,14 +3,18 @@
   <ul>
   <li><a href="/#/shorten">Shorten</a></li>
   <li><a href="/#/links">Links</a></li>
+  <li><a href="/#/signout">Signout</a></li>
   </ul>
-  <ul>
-    <li ng-repeat='links in data.links'>
+  <form>
+    <input ng-model='query'></input>
+  </form>
+  <ul ng-repeat="links in data.links | orderBy: '-visits' | filter: query">
+    <li>
+      <span class="visit">{{ links.visits }} visits</span>
       <div>{{ links.title }}</div>
       <div>
         <a href='{{links.base_url}}/api/links/{{ links.code }}'>localhost:3000/#/link/{{ links.code }}</a>
       </div>
-      <div>{{ links.visits }}</div>
     </li>
   </ul>
 </div>

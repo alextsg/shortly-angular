@@ -4,6 +4,7 @@ angular.module('shortly.links', [])
   $scope.data = {};
   $scope.data.links = {};
   $scope.getLinks = function(){
+    console.log("inside controller");
     $http.get('/api/links').success(function(data){
       $scope.data.links = data;
     }).error(function(data){

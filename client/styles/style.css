@@ -146,3 +146,18 @@ input[type=url]:focus {
   clear: both;
 }
 
+.ng-invalid.ng-dirty{
+  border-color: #fa787e;
+  border-size: 3px;
+  border-radius: 5px;
+}
+.ng-valid.ng-dirty{
+  border-color: green;
+  border-size: 3px;
+  border-radius: 5px;
+}
+
+.visit {
+  float: right;
+  margin-right: 200px;
+}

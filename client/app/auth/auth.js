@@ -14,6 +14,7 @@ angular.module('shortly.auth', [])
       })
       .catch(function (error) {
         console.error(error);
+        //$location.path('/signin');
       });
   };
 
@@ -27,4 +28,9 @@ angular.module('shortly.auth', [])
         console.error(error);
       });
   };
+
+  $scope.signout = function() {
+    $window.localStorage.clear();
+    $location.path('/signin');
+  }
 });
