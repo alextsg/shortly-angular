@@ -1,6 +1,12 @@
-<div id='container'>
-<!-- Your code here -->
-
+<div id='container' ng-controller='ShortenController'>
+  <ul>
+  <li><a href="/#/shorten">Shorten</a></li>
+  <li><a href="/#/links">Links</a></li>
+  </ul>
+  <form name='shorten'>
+    <input ng-model='url'></input>
+    <button ng-click='addLink()'>Submit</button>
+  </form>
 </div>
 
 

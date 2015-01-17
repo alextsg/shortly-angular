@@ -3,6 +3,7 @@ angular.module('shortly', [
   'shortly.links',
   'shortly.shorten',
   'shortly.auth',
+  'shortly.clicks',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider) {
@@ -14,6 +15,21 @@ angular.module('shortly', [
     .when('/signup', {
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
+    })
+    .when('/links', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
+    })
+    .when('/shorten', {
+      templateUrl: 'app/shorten/shorten.html',
+      controller: 'ShortenController'
+    })
+    .when('/link/:code', {
+      templateUrl: "app/clicks/clicks.html",
+      controller: "ClicksController"
+    })
+    .otherwise({
+      redirectTo: '/links'
     })
     // Your code here
 

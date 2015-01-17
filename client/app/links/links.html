@@ -1,3 +1,16 @@
-<div id='container'>
+<div id='container' ng-controller="LinksController">
   <!-- Your html here -->
+  <ul>
+  <li><a href="/#/shorten">Shorten</a></li>
+  <li><a href="/#/links">Links</a></li>
+  </ul>
+  <ul>
+    <li ng-repeat='links in data.links'>
+      <div>{{ links.title }}</div>
+      <div>
+        <a href='{{links.base_url}}/api/links/{{ links.code }}'>localhost:3000/#/link/{{ links.code }}</a>
+      </div>
+      <div>{{ links.visits }}</div>
+    </li>
+  </ul>
 </div>
